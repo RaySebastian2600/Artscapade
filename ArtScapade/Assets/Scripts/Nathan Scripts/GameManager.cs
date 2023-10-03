@@ -28,4 +28,14 @@ public class GameManager : MonoBehaviour
         activeCamera = nActiveCamera;
     }
 
+    void Timer()
+    {
+
+    }
+
+    public void GameOver()
+    {
+        
+    }
+
 }
