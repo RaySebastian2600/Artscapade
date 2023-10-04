@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class BaseThiefAI : MonoBehaviour
 {
     [SerializeField] protected GameObject[] steps;
-    [SerializeField] protected float thiefCooldownMin;
-    [SerializeField] protected float thiefCooldownMax;
-    [SerializeField] protected bool onCooldown;
+    [SerializeField] protected float thiefCooldownMin = 5f;
+    [SerializeField] protected float thiefCooldownMax = 10f;
+    [SerializeField] protected bool onCooldown = false;
     [SerializeField] protected bool isActive = false;
     [SerializeField] protected ThiefManager thiefManager;
     [SerializeField] protected int activeRoute;
