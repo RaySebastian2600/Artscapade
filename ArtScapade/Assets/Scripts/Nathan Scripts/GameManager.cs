@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject activeCamera;
+    [Tooltip("This is the camera that the player is currently seeing. Do not manually change this via editor as it's serialized for debugging purposes only.")]
+    [SerializeField] Camera activeCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     /// Active Camera's Getter
     /// </summary>
     /// <returns>Returns the GameObject that is currently the active camera</returns>
-    public GameObject GetActiveCamera()
+    public Camera GetActiveCamera()
     {
         return activeCamera;
     }
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
     /// Active Camera's Setter. Call to change what the Active Camera is
     /// </summary>
     /// <returns></returns>
-    public void SetActiveCamera(GameObject nActiveCamera)
+    public void SetActiveCamera(Camera nActiveCamera)
     {
         activeCamera = nActiveCamera;
     }
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-        
+        Debug.Log("Game Over");
     }
 
 }
