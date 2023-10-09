@@ -1,3 +1,13 @@
+/***
+ * GameManager.cs
+ * Version 1.0
+ * By Nathan Boles
+ * 
+ * This script will run general maintenance for the game and will be a common go between for what
+ * would be common information. It will also keep track of how much time has passed, along with 
+ * be most important for the GameOver.
+ * 
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
