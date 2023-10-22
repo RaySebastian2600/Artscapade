@@ -20,11 +20,11 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(FirstLevel);
+        SceneManager.LoadScene(FirstLevel);         //loads scene you designate in string
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        Application.Quit();                         //Exits game
     }
 }
