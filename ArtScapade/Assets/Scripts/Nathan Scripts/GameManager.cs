@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 {
     [Tooltip("This is the camera that the player is currently seeing. Do not manually change this via editor as it's serialized for debugging purposes only.")]
     [SerializeField] Camera activeCamera;
+    [Tooltip("This is the device whose is most recently clicked on. Used to change to the corresponding UI and keep track of the drone. Do not manually change this via editor as it's serialized for debugging purposes only.")]
+    [SerializeField] GameObject currentDevice;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +41,21 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Active Camera's Setter. Call to change what the Active Camera is
+    /// Active Camera setter
     /// </summary>
-    /// <returns></returns>
+    /// <param name="nActiveCamera">What the active camera is</param>
     public void SetActiveCamera(Camera nActiveCamera)
     {
         activeCamera = nActiveCamera;
+    }
+
+    /// <summary>
+    /// Current Device Getter
+    /// </summary>
+    /// <returns>The game object that is most recently swapped to by hotkeys or clicked on via minimap</returns>
+    public GameObject GetCurrentDevice()
+    {
+        return currentDevice;
     }
 
     /// <summary>
