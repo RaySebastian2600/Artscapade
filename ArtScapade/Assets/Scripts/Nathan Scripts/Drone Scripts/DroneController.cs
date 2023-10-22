@@ -17,7 +17,7 @@ using System.Linq;
 
 public class DroneController : MonoBehaviour
 {
-    bool isSelected; //Keeps track if this object is selected or not.
+    bool isSelected; //Keeps track if this object is selected or not. (Probably decrepate and have GameManager keep track of this instead.)
     [Tooltip("The line renderer that came along with this prefab")]
     [SerializeField] LineRenderer lineRenderer;
     [Tooltip("The color of the line when it's setting up.")]
@@ -85,7 +85,8 @@ public class DroneController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            ClearPath();
+            ClearPath(); 
+            //add a check to make sure that the initial click is within a reasonable distance of this drone
         }
             
 

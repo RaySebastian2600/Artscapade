@@ -15,4 +15,15 @@ public class MinimapControls : MonoBehaviour
     {
         
     }
+
+    public void ClickCamera(int cam)
+    {
+        //Switches Camera view to the camera that was clicked on
+        //When the camera switches, the UI should swap to the appropriate camera 
+    }
+
+    public void ClickDrone(int drone)
+    {
+        //clicks on a drone to activate it
+    }
 }
