@@ -85,7 +85,7 @@ public class DroneController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            ClearPath(); 
+            ClearPath();
             //add a check to make sure that the initial click is within a reasonable distance of this drone
         }
             
@@ -135,9 +135,11 @@ public class DroneController : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
+        
 
         if (Physics.Raycast(ray, out rayHit))
         {
+            Debug.Log("Ray point is " + rayHit.point);
             float point = PointCheck(rayHit);
             if (point > 1f)
             {
