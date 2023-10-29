@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Art
   - Drawable
+  - Clickable
   layers:
   - Default
   - TransparentFX
