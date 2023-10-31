@@ -24,9 +24,9 @@ public class Route : MonoBehaviour
     [Tooltip("Which waypoint will represent the thief having taken the art into thier hands")]
     [SerializeField] int waypointTargetIndex;
     [Tooltip("What camera is the one that will see this thief.")]
-    [SerializeField] Camera focusedCamera;
-    [Tooltip("Which points should focused Camera change on? [Not implemented yet]")]
-    [SerializeField] int[] cameraChangePoints;
+    [SerializeField] Camera[] focusedCamera;
+    //[Tooltip("Which points should focused Camera change on? [Not implemented yet]")]
+    //[SerializeField] int[] cameraChangePoints;
 
     // Start is called before the first frame update
     void Start()
@@ -89,8 +89,8 @@ public class Route : MonoBehaviour
     /// Returns the camera currently focusing on this route
     /// </summary>
     /// <returns>The FocusCamera of this route</returns>
-    public Camera getFocusCamera()
+    public Camera getFocusCamera(int point)
     {
-        return focusedCamera;
+        return focusedCamera[point];
     }
 }

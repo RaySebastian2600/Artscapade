@@ -28,12 +28,24 @@ public class DroneController : MonoBehaviour
     List<Vector3> setup = new List<Vector3>(); //A list of points that is used for setuping the path
     [Tooltip("How fast does this thing move?")]
     [SerializeField] float moveSpeed = 5;
+    [Tooltip("The raidus that the mouse has to be within to see if mouse is clicking near it")]
+    [SerializeField] float startToMoveRadius = 10f;
+    bool clickTest = false;
+    [Tooltip("The object with the collider which is being used for the collision (should be preset)")]
+    [SerializeField] SphereCollider captureCollider;
+    [Tooltip("How far away for a thief to be for it to be hit by this drones Capture")]
+    [SerializeField] float captureRadius;
+    bool captureIsOnCooldown = false;
+    [Tooltip("How long should capture command be on cooldown for?")]
+    [SerializeField] float captureCooldownLength = 3f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isSelected = true;
+        isSelected = true; 
+        clickTest = false;
+        //add something that changes the Radius of captureCollider
     }
 
     // Update is called once per frame
@@ -59,7 +71,7 @@ public class DroneController : MonoBehaviour
             }
             else
             {
-                Debug.Log(path[0]);
+                //Debug.Log(path[0]);
                 path.RemoveAt(0);
                 DrawLine();
             }
@@ -73,6 +85,20 @@ public class DroneController : MonoBehaviour
     public void Capture()
     {
         //When activated, do the capture action
+        //Check to see if Capture is on cooldown
+        //If not, enable a trigger
+        //and put Capture() on a cooldown
+        if (!captureIsOnCooldown)
+        {
+            captureCollider.enabled = true;
+            
+        }
+    }
+
+    private IEnumerator CaptureCooldown()
+    {
+        yield return new WaitForSeconds(captureCooldownLength);
+        captureIsOnCooldown = false;
     }
 
 
@@ -86,17 +112,20 @@ public class DroneController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ClearPath();
-            //add a check to make sure that the initial click is within a reasonable distance of this drone
+            ClickCheck();
+            //Clear icons
         }
             
 
         if (Input.GetButton("Fire1"))
         {
-            SetupPath();
+            if (clickTest)
+                SetupPath();
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             TransferPath();
+            clickTest = false;
             setup.Clear();
             lineRenderer.colorGradient = pathGradient;
             DrawLine();
@@ -168,6 +197,24 @@ public class DroneController : MonoBehaviour
     }
 
     /// <summary>
+    /// This method checks to see if the inital click/point is within a reasonable 
+    /// </summary>
+    private void ClickCheck()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(ray, out rayHit))
+        {
+            Debug.Log(Vector3.Distance(rayHit.point, transform.position));
+            if(Vector3.Distance(rayHit.point, transform.position) <= startToMoveRadius)
+            {
+                clickTest = true;
+            }
+        }
+    }
+
+    /// <summary>
     /// This checks on both where the latest point is and how far each point is.
     /// If this is on object that isn't 'drawable', then return -1. 
     /// Otherwise, if there is no point in setup at all, then throw an infinite number back.
@@ -196,4 +243,6 @@ public class DroneController : MonoBehaviour
     {
         isSelected = nIsSelected;
     }
+
+    
 }

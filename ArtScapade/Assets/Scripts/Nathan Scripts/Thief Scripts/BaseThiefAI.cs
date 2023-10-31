@@ -77,14 +77,14 @@ public class BaseThiefAI : MonoBehaviour
             if (Random.Range(0,100) < stepChance) //Check to see if it is able to get a random number below stepChance
             {
                 Debug.Log("Step Chance success check");
-                if (routes[activeRoute].getFocusCamera() != gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera
+                if (routes[activeRoute].getFocusCamera(step) == gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera
                 {
-                    TakeStep();
-                    cooldownReduction = 0;
+                    ReduceCooldown();
                 }
                 else
                 {
-                    ReduceCooldown();
+                    TakeStep();
+                    cooldownReduction = 0;
                 }
             }
             else
@@ -231,6 +231,7 @@ public class BaseThiefAI : MonoBehaviour
     /// </summary>
     public virtual void Captured()
     {
+        //Play a captured animation then...
         ReturnHome();
         targetInfo.TargetSaved(currentTarget);
         routes[activeRoute].GetTarget().SetActive(true);
@@ -244,5 +245,13 @@ public class BaseThiefAI : MonoBehaviour
         isActive = false;
         transform.position = home.transform.position;
         thiefManager.ReturnThief(gameObject);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Capture"))
+        {
+            Captured();
+        }
     }
 }
