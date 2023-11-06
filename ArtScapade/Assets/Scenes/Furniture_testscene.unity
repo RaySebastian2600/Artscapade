@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: -5071721890156166708, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 509a796ce0f4e934eac2f42f5fe4afaf, type: 2}
+      objectReference: {fileID: 2100000, guid: 85b5e0d610e1123409e38fb0f7585212, type: 2}
     - target: {fileID: -4239811176182934884, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 509a796ce0f4e934eac2f42f5fe4afaf, type: 2}
+    - target: {fileID: -1764854189437118, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2cf87c20f1be3d499d683f087f6d968, type: 2}
     - target: {fileID: 919132149155446097, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
       propertyPath: m_Name
       value: room layout reference complete for real
@@ -317,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 509a796ce0f4e934eac2f42f5fe4afaf, type: 2}
+    - target: {fileID: 7564450615684836716, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39f6d18166e5b6944898fc00abe66c11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9d736b274025fe49894dcd6cc80d54e, type: 3}
 --- !u!1 &1546292962
