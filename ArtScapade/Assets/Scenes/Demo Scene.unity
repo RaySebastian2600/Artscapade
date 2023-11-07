@@ -1262,8 +1262,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
+    - target: {fileID: 712479765917968137, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+      propertyPath: captureRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 712479765917968137, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+      propertyPath: captureCollider
+      value: 
+      objectReference: {fileID: 713895074}
     - target: {fileID: 1927160053234166777, guid: 22d44954c2127ad4686af42dce801479, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325845075554780485, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516140537882209679, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+      propertyPath: m_Radius
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8256754989423208297, guid: 22d44954c2127ad4686af42dce801479, type: 3}
@@ -1272,6 +1288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+--- !u!135 &713895074 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 7516140537882209679, guid: 22d44954c2127ad4686af42dce801479, type: 3}
+  m_PrefabInstance: {fileID: 713895073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &734912155
 GameObject:
   m_ObjectHideFlags: 0

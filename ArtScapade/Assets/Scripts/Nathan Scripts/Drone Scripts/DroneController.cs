@@ -1,7 +1,7 @@
 /**
  * DroneController.cs
  * By Nathan Boles
- * Version 0.8
+ * Version 0.9
  * 
  * This code is the main controller of the drone system within the game.
  * It uses mouse input to create a line upon the world upon which the player draws.
@@ -17,7 +17,7 @@ using System.Linq;
 
 public class DroneController : MonoBehaviour
 {
-    bool isSelected = false; //Keeps track if this object is selected or not. (Probably decrepate and have GameManager keep track of this instead.)
+    bool isSelected; //Keeps track if this object is selected or not. (Probably decrepate and have GameManager keep track of this instead.)
     [Tooltip("The line renderer that came along with this prefab")]
     [SerializeField] LineRenderer lineRenderer;
     [Tooltip("The color of the line when it's setting up.")]
@@ -28,12 +28,24 @@ public class DroneController : MonoBehaviour
     List<Vector3> setup = new List<Vector3>(); //A list of points that is used for setuping the path
     [Tooltip("How fast does this thing move?")]
     [SerializeField] float moveSpeed = 5;
+    [Tooltip("The raidus that the mouse has to be within to see if mouse is clicking near it")]
+    [SerializeField] float startToMoveRadius = 10f;
+    bool clickTest = false;
+    [Tooltip("The object with the collider which is being used for the collision (should be preset)")]
+    [SerializeField] SphereCollider captureCollider;
+    [Tooltip("How far away for a thief to be for it to be hit by this drones Capture")]
+    [SerializeField] float captureRadius;
+    bool captureIsOnCooldown = false;
+    [Tooltip("How long should capture command be on cooldown for?")]
+    [SerializeField] float captureCooldownLength = 3f;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //isSelected = true;
+        isSelected = false;
+        clickTest = false;
     }
 
     // Update is called once per frame
@@ -73,6 +85,20 @@ public class DroneController : MonoBehaviour
     public void Capture()
     {
         //When activated, do the capture action
+        //Check to see if Capture is on cooldown
+        //If not, enable a trigger
+        //and put Capture() on a cooldown
+        if (!captureIsOnCooldown)
+        {
+            captureCollider.enabled = true;
+            StartCoroutine(CaptureCooldown());
+        }
+    }
+
+    private IEnumerator CaptureCooldown()
+    {
+        yield return new WaitForSeconds(captureCooldownLength);
+        captureIsOnCooldown = false;
     }
 
 
@@ -86,17 +112,20 @@ public class DroneController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ClearPath();
+            ClickCheck();
             //add a check to make sure that the initial click is within a reasonable distance of this drone
         }
             
 
         if (Input.GetButton("Fire1"))
         {
-            SetupPath();
+            if (clickTest)
+                SetupPath();
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             TransferPath();
+            clickTest = false;
             setup.Clear();
             lineRenderer.colorGradient = pathGradient;
             DrawLine();
@@ -151,6 +180,7 @@ public class DroneController : MonoBehaviour
             else if (point == -1)
             {
                 Debug.Log("Fail to find drawable");
+                clickTest = false;
                 setup.Clear();
             }
         }
@@ -164,6 +194,25 @@ public class DroneController : MonoBehaviour
         foreach (Vector3 point in setup)
         {
             path.Add(point);
+        }
+    }
+
+
+    /// <summary>
+    /// This method checks to see if the inital click/point is within a reasonable 
+    /// </summary>
+    private void ClickCheck()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(ray, out rayHit))
+        {
+            Debug.Log(Vector3.Distance(rayHit.point, transform.position));
+            if (Vector3.Distance(rayHit.point, transform.position) <= startToMoveRadius)
+            {
+                clickTest = true;
+            }
         }
     }
 
@@ -196,4 +245,6 @@ public class DroneController : MonoBehaviour
     {
         isSelected = nIsSelected;
     }
+
+
 }
