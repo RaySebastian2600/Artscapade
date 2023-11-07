@@ -119,8 +119,9 @@ public class DroneController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            ClearPath();
             ClickCheck();
+            if (clickTest)
+                ClearPath();
             //add a check to make sure that the initial click is within a reasonable distance of this drone
         }
             
