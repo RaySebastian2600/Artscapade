@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4089203198654201631}
   - component: {fileID: 4089203198654201629}
   - component: {fileID: 4089203198654201628}
+  - component: {fileID: 115067957570913259}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -73,6 +74,23 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &115067957570913259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089203198654201630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab7530bea75ef347b76f157291a1fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpriteOff: {fileID: 1233879758518454264, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
+  cameraSpriteOn: {fileID: -1331592484267494522, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
+  droneSpriteOff: {fileID: 8791464773355692739, guid: 64e4391f78f198f4ca1ac6c18312701f, type: 3}
+  droneSpriteOn: {fileID: 6595310383140453928, guid: 64e4391f78f198f4ca1ac6c18312701f, type: 3}
+  gameManager: {fileID: 0}
 --- !u!1 &4089203198760702598
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ using System.Linq;
 
 public class DroneController : MonoBehaviour
 {
-    bool isSelected; //Keeps track if this object is selected or not. (Probably decrepate and have GameManager keep track of this instead.)
+    bool isSelected = false; //Keeps track if this object is selected or not. (Probably decrepate and have GameManager keep track of this instead.)
     [Tooltip("The line renderer that came along with this prefab")]
     [SerializeField] LineRenderer lineRenderer;
     [Tooltip("The color of the line when it's setting up.")]
@@ -33,7 +33,7 @@ public class DroneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isSelected = true;
+        //isSelected = true;
     }
 
     // Update is called once per frame

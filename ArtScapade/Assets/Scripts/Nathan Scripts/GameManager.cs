@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
         return currentDevice;
     }
 
+    public void SetCurrentDevice(GameObject nDevice)
+    {
+        currentDevice = nDevice;
+    }
+
     /// <summary>
     /// The main timer for the game. This method is used to help keep track of how much time has passed for the overall
     /// level.
