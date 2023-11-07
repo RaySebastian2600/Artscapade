@@ -24,14 +24,15 @@ public class Route : MonoBehaviour
     [Tooltip("Which waypoint will represent the thief having taken the art into thier hands")]
     [SerializeField] int waypointTargetIndex;
     [Tooltip("What camera is the one that will see this thief.")]
-    [SerializeField] Camera focusedCamera;
-    [Tooltip("Which points should focused Camera change on? [Not implemented yet]")]
-    [SerializeField] int[] cameraChangePoints;
+    [SerializeField] Camera[] focusedCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach (GameObject step in waypoints)
+        {
+            step.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +79,7 @@ public class Route : MonoBehaviour
     }
     
     /// <summary>
-    /// Turns this route GameObject of if completed.
+    /// Turns this route GameObject off if completed.
     /// </summary>
     public void RouteCompleted()
     {
@@ -89,8 +90,8 @@ public class Route : MonoBehaviour
     /// Returns the camera currently focusing on this route
     /// </summary>
     /// <returns>The FocusCamera of this route</returns>
-    public Camera getFocusCamera()
+    public Camera getFocusCamera(int i)
     {
-        return focusedCamera;
+        return focusedCamera[i];
     }
 }
