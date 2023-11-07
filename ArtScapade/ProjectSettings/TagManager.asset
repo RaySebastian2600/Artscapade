@@ -9,6 +9,7 @@ TagManager:
   - Clickable
   - Click Camera
   - Click Drone
+  - Capture
   layers:
   - Default
   - TransparentFX
