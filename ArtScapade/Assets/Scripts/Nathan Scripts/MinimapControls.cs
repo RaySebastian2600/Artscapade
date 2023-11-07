@@ -35,8 +35,12 @@ public class MinimapControls : MonoBehaviour
 
             if (Physics.Raycast(ray, out rh))
             {
+                Debug.Log("Checking: " + rh.point);
                 if (rh.collider.CompareTag("Click Camera"))
+                {
                     ClickCamera(rh.collider.gameObject.transform.parent.gameObject);
+                    Debug.Log("Camera Clicked");
+                }
                 else if (rh.collider.CompareTag("Click Drone"))
                     ClickDrone(rh.collider.gameObject.transform.parent.gameObject);
             }
@@ -85,7 +89,8 @@ public class MinimapControls : MonoBehaviour
 
     public void SwitchUI(GameObject nDevice)
     {
+        Debug.Log("nDevice = " + nDevice.name);
         gameManager.GetCurrentDevice().GetComponentInChildren<Canvas>().gameObject.SetActive(false);
-        nDevice.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+        nDevice.GetComponentInChildren<Canvas>(true).gameObject.SetActive(true);
     }
 }
