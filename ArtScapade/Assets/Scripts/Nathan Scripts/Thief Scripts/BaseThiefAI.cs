@@ -191,6 +191,7 @@ public class BaseThiefAI : MonoBehaviour
         if (step < routes[activeRoute].GetWaypointSize())
         {
             transform.position = routes[activeRoute].GetWaypoint(step).transform.position;
+            ToggleSprites();
             
             if (step == routes[activeRoute].GetWaypointTargetIndex())
             {
@@ -231,6 +232,7 @@ public class BaseThiefAI : MonoBehaviour
     private void Escape()
     {
         ReturnHome();
+        step--;
         targetInfo.TargetStolen(currentTarget);
     }
 
@@ -240,6 +242,7 @@ public class BaseThiefAI : MonoBehaviour
     public virtual void Captured()
     {
         ReturnHome();
+        Debug.Log(gameObject.name + " was Captured");
         targetInfo.TargetSaved(currentTarget);
         routes[activeRoute].GetTarget().SetActive(true);
     }
@@ -249,12 +252,13 @@ public class BaseThiefAI : MonoBehaviour
     /// </summary>
     void ReturnHome()
     {
+        routes[activeRoute].GetWaypoint(step).GetComponent<SpriteRenderer>().enabled = false;
         isActive = false;
         transform.position = home.transform.position;
         thiefManager.ReturnThief(gameObject);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnColliderEnter(Collider other)
     {
         if (other.CompareTag("Capture"))
         {

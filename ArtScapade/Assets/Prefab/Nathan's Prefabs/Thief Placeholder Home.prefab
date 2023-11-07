@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 8598929307064155970}
   - component: {fileID: 8598929307064155972}
   - component: {fileID: 8598929307064155973}
+  - component: {fileID: 4827158993738895529}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -207,7 +208,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8598929307064155971}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -241,3 +242,19 @@ MonoBehaviour:
   thiefManager: {fileID: 0}
   gameManager: {fileID: 0}
   targetInfo: {fileID: 0}
+--- !u!54 &4827158993738895529
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598929307064155971}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

@@ -71,7 +71,7 @@ public class DroneController : MonoBehaviour
             }
             else
             {
-                Debug.Log(path[0]);
+                //Debug.Log(path[0]);
                 path.RemoveAt(0);
                 DrawLine();
             }
@@ -88,10 +88,13 @@ public class DroneController : MonoBehaviour
         //Check to see if Capture is on cooldown
         //If not, enable a trigger
         //and put Capture() on a cooldown
+        Debug.Log("Attempting Capture");
         if (!captureIsOnCooldown)
         {
+            Debug.Log("Capturing");
             captureCollider.enabled = true;
             StartCoroutine(CaptureCooldown());
+            StartCoroutine(CaptureDisable());
         }
     }
 
@@ -101,6 +104,11 @@ public class DroneController : MonoBehaviour
         captureIsOnCooldown = false;
     }
 
+    private IEnumerator CaptureDisable()
+    {
+        yield return new WaitForSeconds(.5f);
+        captureCollider.enabled = false;
+    }
 
     /// <summary>
     /// Watches for input from the mouse.
@@ -168,7 +176,7 @@ public class DroneController : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayHit))
         {
-            Debug.Log("Ray point is " + rayHit.point);
+            //Debug.Log("Ray point is " + rayHit.point);
             float point = PointCheck(rayHit);
             if (point > 1f)
             {
@@ -208,7 +216,7 @@ public class DroneController : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayHit))
         {
-            Debug.Log(Vector3.Distance(rayHit.point, transform.position));
+            //Debug.Log(Vector3.Distance(rayHit.point, transform.position));
             if (Vector3.Distance(rayHit.point, transform.position) <= startToMoveRadius)
             {
                 clickTest = true;

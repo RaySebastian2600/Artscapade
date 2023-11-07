@@ -35,7 +35,7 @@ public class MinimapControls : MonoBehaviour
 
             if (Physics.Raycast(ray, out rh))
             {
-                Debug.Log("Checking: " + rh.point);
+                //Debug.Log("Checking: " + rh.point);
                 if (rh.collider.CompareTag("Click Camera"))
                 {
                     ClickCamera(rh.collider.gameObject.transform.parent.gameObject);
