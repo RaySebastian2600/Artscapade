@@ -31,14 +31,13 @@ public class DroneController : MonoBehaviour
     [Tooltip("The raidus that the mouse has to be within to see if mouse is clicking near it")]
     [SerializeField] float startToMoveRadius = 10f;
     bool clickTest = false;
-    [Tooltip("The object with the collider which is being used for the collision (should be preset)")]
-    [SerializeField] SphereCollider captureCollider;
     [Tooltip("How far away for a thief to be for it to be hit by this drones Capture")]
     [SerializeField] float captureRadius;
     bool captureIsOnCooldown = false;
     [Tooltip("How long should capture command be on cooldown for?")]
     [SerializeField] float captureCooldownLength = 3f;
-
+    [Tooltip("The thieves layermask")]
+    [SerializeField] LayerMask thieves;
 
 
     // Start is called before the first frame update
@@ -92,9 +91,16 @@ public class DroneController : MonoBehaviour
         if (!captureIsOnCooldown)
         {
             Debug.Log("Capturing");
-            captureCollider.enabled = true;
+            Collider[] col = Physics.OverlapSphere(transform.position, captureRadius, thieves);
+            //Instantiate(spherePrefab, this.transform.position, Quaternion.identity);
+            foreach (Collider c in col)
+            {
+                if (c.GetComponent<BaseThiefAI>())
+                {
+                    c.GetComponent<BaseThiefAI>().Captured();
+                }
+            }
             StartCoroutine(CaptureCooldown());
-            StartCoroutine(CaptureDisable());
         }
     }
 
@@ -104,11 +110,7 @@ public class DroneController : MonoBehaviour
         captureIsOnCooldown = false;
     }
 
-    private IEnumerator CaptureDisable()
-    {
-        yield return new WaitForSeconds(.5f);
-        captureCollider.enabled = false;
-    }
+
 
     /// <summary>
     /// Watches for input from the mouse.

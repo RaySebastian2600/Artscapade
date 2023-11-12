@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 8598929307064155972}
   - component: {fileID: 8598929307064155973}
   - component: {fileID: 4827158993738895529}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thief
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8598929307064155971}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

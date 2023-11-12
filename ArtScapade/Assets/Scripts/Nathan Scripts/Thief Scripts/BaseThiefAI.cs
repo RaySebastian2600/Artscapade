@@ -257,12 +257,4 @@ public class BaseThiefAI : MonoBehaviour
         transform.position = home.transform.position;
         thiefManager.ReturnThief(gameObject);
     }
-
-    private void OnColliderEnter(Collider other)
-    {
-        if (other.CompareTag("Capture"))
-        {
-            Captured();
-        }
-    }
 }
