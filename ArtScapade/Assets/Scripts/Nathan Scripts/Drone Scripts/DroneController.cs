@@ -78,7 +78,6 @@ public class DroneController : MonoBehaviour
     }
     
     /// <summary>
-    /// Not implemented yet.
     /// Use a trigger collider to check to see if there are any 'enemies' around. If there is, use their capture method.
     /// </summary>
     public void Capture()
@@ -104,6 +103,10 @@ public class DroneController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This is a coroutine to keep track of the Capture Cooldown. When it ends, you can use the capture method again.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CaptureCooldown()
     {
         yield return new WaitForSeconds(captureCooldownLength);

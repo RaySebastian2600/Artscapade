@@ -110,7 +110,7 @@ public class ThiefManager : MonoBehaviour
     /// <param name="thief">The thief gameobject this is to be returned to the list.</param>
     public void ReturnThief(GameObject thief)
     {
-        Debug.Log("Adding thief back in");
+        Debug.Log("Adding " + thief.name + " back in");
         thiefRoster.Add(thief);
     }
 }
