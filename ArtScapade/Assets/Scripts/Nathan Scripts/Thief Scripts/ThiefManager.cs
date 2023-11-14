@@ -78,7 +78,8 @@ public class ThiefManager : MonoBehaviour
     void AddThief()
     {
         Debug.Log("Trying to add a thief");
-        if (thiefRoster.Count != 0)
+        Debug.Log("# of thieves equal: " + thiefRoster.Count);
+        if (thiefRoster.Count > 0)
         {
             int nextThief = Random.Range(0, thiefRoster.Count);
             Debug.Log(nextThief);
