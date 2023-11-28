@@ -38,6 +38,8 @@ public class DroneController : MonoBehaviour
     [SerializeField] float captureCooldownLength = 3f;
     [Tooltip("The thieves layermask")]
     [SerializeField] LayerMask thieves;
+    [Tooltip("The gameobject meant to represent the capture area of this object.")]
+    [SerializeField] GameObject captureVisual;
 
 
     // Start is called before the first frame update
@@ -78,7 +80,6 @@ public class DroneController : MonoBehaviour
     }
     
     /// <summary>
-    /// Not implemented yet.
     /// Use a trigger collider to check to see if there are any 'enemies' around. If there is, use their capture method.
     /// </summary>
     public void Capture()
@@ -91,6 +92,8 @@ public class DroneController : MonoBehaviour
         if (!captureIsOnCooldown)
         {
             Debug.Log("Capturing");
+            captureVisual.transform.localScale = new Vector3(captureRadius, captureRadius, captureRadius);
+            captureVisual.SetActive(true);
             Collider[] col = Physics.OverlapSphere(transform.position, captureRadius, thieves);
             //Instantiate(spherePrefab, this.transform.position, Quaternion.identity);
             foreach (Collider c in col)
@@ -104,10 +107,15 @@ public class DroneController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This is a coroutine to keep track of the Capture Cooldown. When it ends, you can use the capture method again.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CaptureCooldown()
     {
         yield return new WaitForSeconds(captureCooldownLength);
         captureIsOnCooldown = false;
+        captureVisual.SetActive(false);
     }
 
 
