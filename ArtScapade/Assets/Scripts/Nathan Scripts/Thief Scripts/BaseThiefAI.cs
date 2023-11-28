@@ -231,8 +231,8 @@ public class BaseThiefAI : MonoBehaviour
     /// </summary>
     private void Escape()
     {
-        ReturnHome();
         step--;
+        ReturnHome();
         targetInfo.TargetStolen(currentTarget);
     }
 

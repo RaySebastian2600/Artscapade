@@ -93,7 +93,9 @@ public class TargetInformation : MonoBehaviour
         art.Remove(aTarget);
         Debug.Log("Art left: " + art.Count);
         if (art.Count == 0)
+        {
             Debug.Log("Game Over");
             gameManager.GameOver();
+        }
     }
 }

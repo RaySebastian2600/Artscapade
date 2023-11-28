@@ -38,6 +38,8 @@ public class DroneController : MonoBehaviour
     [SerializeField] float captureCooldownLength = 3f;
     [Tooltip("The thieves layermask")]
     [SerializeField] LayerMask thieves;
+    [Tooltip("The gameobject meant to represent the capture area of this object.")]
+    [SerializeField] GameObject captureVisual;
 
 
     // Start is called before the first frame update
@@ -90,6 +92,8 @@ public class DroneController : MonoBehaviour
         if (!captureIsOnCooldown)
         {
             Debug.Log("Capturing");
+            captureVisual.transform.localScale = new Vector3(captureRadius, captureRadius, captureRadius);
+            captureVisual.SetActive(true);
             Collider[] col = Physics.OverlapSphere(transform.position, captureRadius, thieves);
             //Instantiate(spherePrefab, this.transform.position, Quaternion.identity);
             foreach (Collider c in col)
@@ -111,6 +115,7 @@ public class DroneController : MonoBehaviour
     {
         yield return new WaitForSeconds(captureCooldownLength);
         captureIsOnCooldown = false;
+        captureVisual.SetActive(false);
     }
 
 

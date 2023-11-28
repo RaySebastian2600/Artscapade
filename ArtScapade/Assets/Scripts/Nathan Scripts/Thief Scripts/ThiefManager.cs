@@ -113,5 +113,9 @@ public class ThiefManager : MonoBehaviour
     {
         Debug.Log("Adding " + thief.name + " back in");
         thiefRoster.Add(thief);
+        foreach (GameObject t in thiefRoster)
+        {
+            Debug.Log(t.name);
+        }
     }
 }
