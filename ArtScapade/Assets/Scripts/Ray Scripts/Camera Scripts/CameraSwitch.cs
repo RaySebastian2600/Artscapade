@@ -7,8 +7,7 @@ public class CameraSwitch : MonoBehaviour
     public GameObject Screen1;
     public GameObject Screen2;                  //Setting places in the inspector for the Screen objects to attach to.
     public GameObject Screen3;
-    public GameObject Screen4;
-    public GameObject Screen5;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,54 +29,29 @@ public class CameraSwitch : MonoBehaviour
         {
             ScreenThree();
         }
-        if (Input.GetKeyDown("4"))
-        {
-            ScreenFour();
-        }
-        if (Input.GetKeyDown("5"))
-        {
-            ScreenFive();
-        }
+       
     }
 
-    void ScreenOne()
+    public void ScreenOne()
     {
         Screen1.SetActive(true);                        //The camera method that displays each screen individually
         Screen2.SetActive(false);
         Screen3.SetActive(false);
-        Screen4.SetActive(false);
-        Screen5.SetActive(false);
+        
     }
-    void ScreenTwo()
+    public void ScreenTwo()
     {
         Screen1.SetActive(false);
         Screen2.SetActive(true);
         Screen3.SetActive(false);
-        Screen4.SetActive(false);
-        Screen5.SetActive(false);
+        
     }
-    void ScreenThree()
+    public void ScreenThree()
     {
         Screen1.SetActive(false);
         Screen2.SetActive(false);
         Screen3.SetActive(true);
-        Screen4.SetActive(false);
-        Screen5.SetActive(false);
+       
     }
-    void ScreenFour()
-    {
-        Screen1.SetActive(false);
-        Screen2.SetActive(false);
-        Screen3.SetActive(false);
-        Screen4.SetActive(true);
-        Screen5.SetActive(false);
-    }
-    void ScreenFive()
-    {
-        Screen1.SetActive(false);
-        Screen2.SetActive(false);
-        Screen3.SetActive(false);
-        Screen4.SetActive(false);
-        Screen5.SetActive(true);
-    }
+   
 }
