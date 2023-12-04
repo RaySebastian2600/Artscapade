@@ -7,7 +7,14 @@ public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float remainingTime;
-    
+    [Tooltip("The GameManager object for this scene")]
+    [SerializeField] GameManager gameManager; //Added by Nathan Boles
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>(); //Added by Nathan Boles
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -28,7 +35,8 @@ public class Timer : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("GameOver");
+        //Debug.Log("GameOver");
+        gameManager.GameOver(); //Added by Nathan Boles
     }
 
 }
