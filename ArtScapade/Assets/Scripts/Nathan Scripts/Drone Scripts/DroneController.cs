@@ -222,6 +222,7 @@ public class DroneController : MonoBehaviour
     /// </summary>
     private void ClickCheck()
     {
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
 

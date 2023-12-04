@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 712479764219925374}
   - component: {fileID: 712479764219925371}
   - component: {fileID: 712479764219925372}
-  - component: {fileID: 712479764219925373}
   m_Layer: 0
   m_Name: Drone Mesh
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &712479764219925373
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712479764219925375}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &712479764510378550
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +346,7 @@ MonoBehaviour:
     m_Mode: 1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  moveSpeed: 5
+  moveSpeed: 11
   startToMoveRadius: 10
   captureRadius: 4
   captureCooldownLength: 3
