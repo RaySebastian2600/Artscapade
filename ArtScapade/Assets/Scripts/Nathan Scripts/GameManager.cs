@@ -11,6 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,11 +19,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] Camera activeCamera;
     [Tooltip("This is the device whose is most recently clicked on. Used to change to the corresponding UI and keep track of the drone. Do not manually change this via editor as it's serialized for debugging purposes only.")]
     [SerializeField] GameObject currentDevice;
+    [Tooltip("This is the canvas that holds the Game Over Screen")]
+    [SerializeField] GameObject gameOverScreen;
+    [Tooltip("The TMP that holds the score for the Game Over screen")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    [Tooltip("The script meant to keep track of the art in the scene")]
+    [SerializeField] TargetInformation targetInformation;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetInformation = FindObjectOfType<TargetInformation>();
     }
 
     // Update is called once per frame
@@ -64,20 +71,14 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// The main timer for the game. This method is used to help keep track of how much time has passed for the overall
-    /// level.
-    /// </summary>
-    void Timer()
-    {
-
-    }
-
-    /// <summary>
     /// The main Game Over setting for the game. This is called upon when the game ends.
     /// </summary>
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
+        gameOverScreen.SetActive(true);
+        scoreText.text = targetInformation.GetCurrentArt().ToString() + " / " + targetInformation.GetTotalArt().ToString();
+        Time.timeScale = 0;
     }
 
 }
