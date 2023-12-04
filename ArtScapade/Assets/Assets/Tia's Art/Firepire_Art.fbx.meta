@@ -3,7 +3,12 @@ guid: 47bb9c6c339222b4dbaa390838a432bf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Artpiece_InkScapeFirePire_CPG3
+    second: {fileID: 2800000, guid: e5fca00c7a3c0ac4bb96191eb0d32386, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

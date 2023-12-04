@@ -3,7 +3,12 @@ guid: 43c2243f580faee4898a22989d81505d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Artpiece_idkumbrella_CPG3
+    second: {fileID: 2800000, guid: bb682ec770ac7954f836d47f39735a3b, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

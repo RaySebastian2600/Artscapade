@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 5003f0fd62d47d344896a9a3f556acc5
+guid: f3687ee9bd7f70c4785f0fdc2d755acc
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Artpiece_InkScapeTest_CPG3
+    second: {fileID: 2800000, guid: 30d58e8b769f22b489a004b893b0aef1, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

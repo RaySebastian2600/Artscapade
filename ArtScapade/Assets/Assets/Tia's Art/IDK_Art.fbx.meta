@@ -3,7 +3,12 @@ guid: 5cb4767b952c277409ed5217db7606e6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: IDK_artpiece_CPG3
+    second: {fileID: 2800000, guid: 63ffdcfcacd261b4f895110b51a6e8ac, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
