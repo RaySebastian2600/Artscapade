@@ -7,6 +7,9 @@ TagManager:
   - Art
   - Drawable
   - Clickable
+  - Click Camera
+  - Click Drone
+  - Capture
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Minimap
-  - 
+  - Thieves
   - 
   - 
   - 

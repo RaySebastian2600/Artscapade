@@ -1,7 +1,7 @@
 /**
  * DroneController.cs
  * By Nathan Boles
- * Version 0.8
+ * Version 0.9
  * 
  * This code is the main controller of the drone system within the game.
  * It uses mouse input to create a line upon the world upon which the player draws.
@@ -28,12 +28,25 @@ public class DroneController : MonoBehaviour
     List<Vector3> setup = new List<Vector3>(); //A list of points that is used for setuping the path
     [Tooltip("How fast does this thing move?")]
     [SerializeField] float moveSpeed = 5;
+    [Tooltip("The raidus that the mouse has to be within to see if mouse is clicking near it")]
+    [SerializeField] float startToMoveRadius = 10f;
+    bool clickTest = false;
+    [Tooltip("How far away for a thief to be for it to be hit by this drones Capture")]
+    [SerializeField] float captureRadius;
+    bool captureIsOnCooldown = false;
+    [Tooltip("How long should capture command be on cooldown for?")]
+    [SerializeField] float captureCooldownLength = 3f;
+    [Tooltip("The thieves layermask")]
+    [SerializeField] LayerMask thieves;
+    [Tooltip("The gameobject meant to represent the capture area of this object.")]
+    [SerializeField] GameObject captureVisual;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isSelected = true;
+        isSelected = false;
+        clickTest = false;
     }
 
     // Update is called once per frame
@@ -59,7 +72,7 @@ public class DroneController : MonoBehaviour
             }
             else
             {
-                Debug.Log(path[0]);
+                //Debug.Log(path[0]);
                 path.RemoveAt(0);
                 DrawLine();
             }
@@ -67,13 +80,44 @@ public class DroneController : MonoBehaviour
     }
     
     /// <summary>
-    /// Not implemented yet.
     /// Use a trigger collider to check to see if there are any 'enemies' around. If there is, use their capture method.
     /// </summary>
     public void Capture()
     {
         //When activated, do the capture action
+        //Check to see if Capture is on cooldown
+        //If not, enable a trigger
+        //and put Capture() on a cooldown
+        Debug.Log("Attempting Capture");
+        if (!captureIsOnCooldown)
+        {
+            Debug.Log("Capturing");
+            captureVisual.transform.localScale = new Vector3(captureRadius, captureRadius, captureRadius);
+            captureVisual.SetActive(true);
+            Collider[] col = Physics.OverlapSphere(transform.position, captureRadius, thieves);
+            //Instantiate(spherePrefab, this.transform.position, Quaternion.identity);
+            foreach (Collider c in col)
+            {
+                if (c.GetComponent<BaseThiefAI>())
+                {
+                    c.GetComponent<BaseThiefAI>().Captured();
+                }
+            }
+            StartCoroutine(CaptureCooldown());
+        }
     }
+
+    /// <summary>
+    /// This is a coroutine to keep track of the Capture Cooldown. When it ends, you can use the capture method again.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator CaptureCooldown()
+    {
+        yield return new WaitForSeconds(captureCooldownLength);
+        captureIsOnCooldown = false;
+        captureVisual.SetActive(false);
+    }
+
 
 
     /// <summary>
@@ -85,18 +129,22 @@ public class DroneController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            ClearPath();
+            ClickCheck();
+            if (clickTest)
+                ClearPath();
             //add a check to make sure that the initial click is within a reasonable distance of this drone
         }
             
 
         if (Input.GetButton("Fire1"))
         {
-            SetupPath();
+            if (clickTest)
+                SetupPath();
         }
         else if (Input.GetButtonUp("Fire1"))
         {
             TransferPath();
+            clickTest = false;
             setup.Clear();
             lineRenderer.colorGradient = pathGradient;
             DrawLine();
@@ -139,7 +187,7 @@ public class DroneController : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayHit))
         {
-            Debug.Log("Ray point is " + rayHit.point);
+            //Debug.Log("Ray point is " + rayHit.point);
             float point = PointCheck(rayHit);
             if (point > 1f)
             {
@@ -151,6 +199,7 @@ public class DroneController : MonoBehaviour
             else if (point == -1)
             {
                 Debug.Log("Fail to find drawable");
+                clickTest = false;
                 setup.Clear();
             }
         }
@@ -164,6 +213,25 @@ public class DroneController : MonoBehaviour
         foreach (Vector3 point in setup)
         {
             path.Add(point);
+        }
+    }
+
+
+    /// <summary>
+    /// This method checks to see if the inital click/point is within a reasonable 
+    /// </summary>
+    private void ClickCheck()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayHit;
+
+        if (Physics.Raycast(ray, out rayHit))
+        {
+            //Debug.Log(Vector3.Distance(rayHit.point, transform.position));
+            if (Vector3.Distance(rayHit.point, transform.position) <= startToMoveRadius)
+            {
+                clickTest = true;
+            }
         }
     }
 
@@ -196,4 +264,6 @@ public class DroneController : MonoBehaviour
     {
         isSelected = nIsSelected;
     }
+
+
 }
