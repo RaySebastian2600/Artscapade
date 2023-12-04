@@ -24,6 +24,7 @@ public class TargetInformation : MonoBehaviour
     [SerializeField] List<GameObject> utility;
     [Tooltip("The GameManager script meant to be in charge of managing the game state as a whole.")]
     [SerializeField] GameManager gameManager;
+    int totalArt = 0;
     
 
     // Start is called before the first frame update
@@ -35,6 +36,7 @@ public class TargetInformation : MonoBehaviour
             if (aTarget.CompareTag("Art"))
             {
                 art.Add(aTarget);
+                totalArt++;
             }
             else
                 utility.Add(aTarget);
@@ -97,5 +99,15 @@ public class TargetInformation : MonoBehaviour
             Debug.Log("Game Over");
             gameManager.GameOver();
         }
+    }
+
+    public int GetTotalArt()
+    {
+        return totalArt;
+    }
+
+    public int GetCurrentArt()
+    {
+        return art.Count;
     }
 }

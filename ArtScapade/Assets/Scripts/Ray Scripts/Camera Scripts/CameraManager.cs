@@ -7,6 +7,7 @@ public class CameraManager : MonoBehaviour
     public Camera[] allCameras;
 
     public int currentCamera;
+    [SerializeField] MinimapControls mc; //Added by Nathan Boles
 
     public void Awake()
     {
@@ -15,11 +16,17 @@ public class CameraManager : MonoBehaviour
             allCameras[i].enabled = false;
     }
 
+    private void Start()
+    {
+        mc = FindObjectOfType<MinimapControls>();
+    }
+
     void IncCamera()
     {
         allCameras[currentCamera].enabled = false;
         currentCamera = ++currentCamera % allCameras.Length;
         allCameras[currentCamera].enabled = true;
+        mc.ClickCamera(allCameras[currentCamera].gameObject); //Added by Nathan Boles
     }
 
     void DecCamera()
@@ -27,6 +34,7 @@ public class CameraManager : MonoBehaviour
         allCameras[currentCamera].enabled = false;
         currentCamera = --currentCamera < 0 ? allCameras.Length - 1 : currentCamera;
         allCameras[currentCamera].enabled = true;
+        mc.ClickCamera(allCameras[currentCamera].gameObject); //Added by Nathan Boles
 
     }
     // Update is called once per frame

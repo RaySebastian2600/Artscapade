@@ -76,6 +76,7 @@ public class MinimapControls : MonoBehaviour
         {
             gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = droneSpriteOff;
             gameManager.GetCurrentDevice().GetComponent<DroneController>().setIsSelected(false);
+            gameManager.GetCurrentDevice().GetComponentInChildren<BoxCollider>().enabled = true;
         }
         gameManager.GetActiveCamera().enabled = false;
         SwitchUI(nCamera);
@@ -102,10 +103,12 @@ public class MinimapControls : MonoBehaviour
         {
             gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = droneSpriteOff;
             gameManager.GetCurrentDevice().GetComponent<DroneController>().setIsSelected(false);
+            gameManager.GetCurrentDevice().GetComponentInChildren<BoxCollider>().enabled = true;
         }
         SwitchUI(nDrone);
         gameManager.SetCurrentDevice(nDrone);
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = droneSpriteOn;
+        gameManager.GetCurrentDevice().GetComponentInChildren<BoxCollider>().enabled = false;
         gameManager.GetCurrentDevice().GetComponent<DroneController>().setIsSelected(true);
     }
 

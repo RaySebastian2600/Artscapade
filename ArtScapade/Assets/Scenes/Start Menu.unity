@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561a7ef627f764e4c919c1ddd3de2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevel: Demo Scene
+  FirstLevel: Tutorial
   SettingsMenu: SettingsMenu
 --- !u!1 &1517267530
 GameObject:
