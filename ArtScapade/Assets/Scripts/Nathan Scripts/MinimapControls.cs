@@ -117,6 +117,7 @@ public class MinimapControls : MonoBehaviour
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = droneSpriteOn;
         gameManager.GetCurrentDevice().GetComponentInChildren<BoxCollider>().enabled = false;
         gameManager.GetCurrentDevice().GetComponent<DroneController>().setIsSelected(true);
+        gameManager.GetCurrentDevice().GetComponent<DroneController>().ClickCheck();
     }
 
     /// <summary>
