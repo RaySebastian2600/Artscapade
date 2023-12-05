@@ -202,6 +202,9 @@ public class BaseThiefAI : MonoBehaviour
             Escape();
     }
 
+    /// <summary>
+    /// Switches the sprites of the previous step off and the current step on
+    /// </summary>
     protected virtual void ToggleSprites()
     {
         routes[activeRoute].GetWaypoint(step - 1).GetComponent<SpriteRenderer>().enabled = false;

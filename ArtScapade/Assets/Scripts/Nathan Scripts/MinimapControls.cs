@@ -14,11 +14,16 @@ using UnityEngine;
 
 public class MinimapControls : MonoBehaviour
 {
+    [Tooltip("The Sprite for the UI representing the camera being off")]
     [SerializeField] Sprite cameraSpriteOff;
+    [Tooltip("The Sprite for the UI representing the camera being on")]
     [SerializeField] Sprite cameraSpriteOn;
+    [Tooltip("The Sprite for the UI representing the drone not being active")]
     [SerializeField] Sprite droneSpriteOff;
+    [Tooltip("The Sprite for the UI representing the drone being active")]
     [SerializeField] Sprite droneSpriteOn;
 
+    [Tooltip("The GameManager object for this scene")]
     [SerializeField] GameManager gameManager;
 
 
