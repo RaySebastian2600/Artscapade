@@ -3,7 +3,9 @@
  * Version 1.0
  * By Nathan Boles
  * 
- * This script is in charge of keeping track of the thieves who are currently not inside the play area. 
+ * This script is in charge of keeping track of the thieves who are currently not inside the play area. It watches
+ * how many thieves exist at any one moment, and keeps track of how long it has been since the last thief entered
+ * the play area, adding a new theif after so much time passed.
  * 
  */
 using System.Collections;
@@ -20,20 +22,10 @@ public class ThiefManager : MonoBehaviour
     [SerializeField] float range = 5;
     bool nextThiefReady; //A boolean meant to check to see if the next thief can start or not.
 
-    //GameManager gameManager;
-
     [Tooltip("The list of thieves available to activate")]
     [SerializeField] List<GameObject> thiefRoster;
     
-    //[SerializeField] int activeThieves = 0;
-    //[SerializeField] GameObject[] targetRoster;
-    //[SerializeField] int missingArtwork = 0;
-
-
-    /*private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }*/
+    
 
     // Start is called before the first frame update
     void Start()

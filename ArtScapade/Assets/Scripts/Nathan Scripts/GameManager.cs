@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
         return currentDevice;
     }
 
+    /// <summary>
+    /// Sets what is the active device
+    /// </summary>
+    /// <param name="nDevice">The new active device</param>
     public void SetCurrentDevice(GameObject nDevice)
     {
         currentDevice = nDevice;

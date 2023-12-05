@@ -220,9 +220,8 @@ public class DroneController : MonoBehaviour
     /// <summary>
     /// This method checks to see if the inital click/point is within a reasonable 
     /// </summary>
-    private void ClickCheck()
+    public void ClickCheck()
     {
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit rayHit;
 

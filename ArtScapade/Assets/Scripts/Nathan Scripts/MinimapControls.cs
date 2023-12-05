@@ -14,18 +14,26 @@ using UnityEngine;
 
 public class MinimapControls : MonoBehaviour
 {
+    [Tooltip("The Sprite for the UI representing the camera being off")]
     [SerializeField] Sprite cameraSpriteOff;
+    [Tooltip("The Sprite for the UI representing the camera being on")]
     [SerializeField] Sprite cameraSpriteOn;
+    [Tooltip("The Sprite for the UI representing the drone not being active")]
     [SerializeField] Sprite droneSpriteOff;
+    [Tooltip("The Sprite for the UI representing the drone being active")]
     [SerializeField] Sprite droneSpriteOn;
 
+    [Tooltip("The GameManager object for this scene")]
     [SerializeField] GameManager gameManager;
+    [Tooltip("The CameraManager object for this scene")]
+    [SerializeField] CameraManager cameraManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        cameraManager = FindObjectOfType<CameraManager>();
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
     }
 
@@ -84,8 +92,7 @@ public class MinimapControls : MonoBehaviour
         gameManager.SetActiveCamera(nCamera.GetComponent<Camera>());
         gameManager.GetActiveCamera().enabled = true;
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
-
-
+        cameraManager.SetCamera(nCamera);
     }
 
     /// <summary>
@@ -110,6 +117,7 @@ public class MinimapControls : MonoBehaviour
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = droneSpriteOn;
         gameManager.GetCurrentDevice().GetComponentInChildren<BoxCollider>().enabled = false;
         gameManager.GetCurrentDevice().GetComponent<DroneController>().setIsSelected(true);
+        gameManager.GetCurrentDevice().GetComponent<DroneController>().ClickCheck();
     }
 
     /// <summary>

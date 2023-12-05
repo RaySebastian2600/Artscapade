@@ -24,7 +24,7 @@ public class TargetInformation : MonoBehaviour
     [SerializeField] List<GameObject> utility;
     [Tooltip("The GameManager script meant to be in charge of managing the game state as a whole.")]
     [SerializeField] GameManager gameManager;
-    int totalArt = 0;
+    int totalArt = 0; //The total amount of art in List<GameObject> art
     
 
     // Start is called before the first frame update
@@ -101,11 +101,19 @@ public class TargetInformation : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the total number of art in the museum that could be stolen
+    /// </summary>
+    /// <returns>The total number of art in the museum that could be stolen</returns>
     public int GetTotalArt()
     {
         return totalArt;
     }
 
+    /// <summary>
+    /// Get the amount of art that remains in the museum
+    /// </summary>
+    /// <returns>The amount of art currently in the museum</returns>
     public int GetCurrentArt()
     {
         return art.Count;
