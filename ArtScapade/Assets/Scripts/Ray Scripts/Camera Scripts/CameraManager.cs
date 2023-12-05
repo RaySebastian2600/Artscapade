@@ -63,5 +63,20 @@ public class CameraManager : MonoBehaviour
             DecCamera();
         }
     }
+
+    /// <summary>
+    /// Added by Nathan Boles
+    /// 
+    /// This is used to figure out the int value of the camera, and shift currentCamera to it.
+    /// </summary>
+    /// <param name="nCamera">The camera object you wish to set currentCamera to point towards</param>
+    public void SetCamera(GameObject nCamera)
+    {
+        for (int i = 0; i < allCameras.Length; i++)
+        {
+            if (allCameras[i].Equals(nCamera.GetComponent<Camera>()))
+                currentCamera = i;
+        }
+    }
    
 }

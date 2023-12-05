@@ -25,12 +25,15 @@ public class MinimapControls : MonoBehaviour
 
     [Tooltip("The GameManager object for this scene")]
     [SerializeField] GameManager gameManager;
+    [Tooltip("The CameraManager object for this scene")]
+    [SerializeField] CameraManager cameraManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        cameraManager = FindObjectOfType<CameraManager>();
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
     }
 
@@ -89,8 +92,7 @@ public class MinimapControls : MonoBehaviour
         gameManager.SetActiveCamera(nCamera.GetComponent<Camera>());
         gameManager.GetActiveCamera().enabled = true;
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
-
-
+        cameraManager.SetCamera(nCamera);
     }
 
     /// <summary>
