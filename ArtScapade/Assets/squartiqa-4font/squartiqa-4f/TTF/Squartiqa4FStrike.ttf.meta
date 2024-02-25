@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 77d001ea49bea3d4cba2f7a3a1c0dc77
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Squartiqa4FStrike
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 00f3e1a68b63ee647abc8bdad492f5f0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

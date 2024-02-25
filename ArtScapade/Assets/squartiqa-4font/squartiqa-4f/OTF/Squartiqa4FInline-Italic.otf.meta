@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 47263ee0df2c3b443b2dc75946eeb8c2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Squartiqa4FInline-Italic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c359de8052dbcc249881d625e98e0dbf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
