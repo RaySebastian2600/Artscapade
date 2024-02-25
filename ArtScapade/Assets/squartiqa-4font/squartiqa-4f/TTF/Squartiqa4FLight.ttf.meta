@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3fe5ca1815410c44196b75597caa8971
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Squartiqa4FLight
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 60d988a4f6f5c9a47973ff4aee5995d8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
