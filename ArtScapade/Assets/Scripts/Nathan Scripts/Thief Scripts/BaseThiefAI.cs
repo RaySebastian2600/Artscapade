@@ -77,8 +77,7 @@ public class BaseThiefAI : MonoBehaviour
             if (Random.Range(0,100) < stepChance) //Check to see if it is able to get a random number below stepChance
             {
                 Debug.Log("Step Chance success check");
-                if (routes[activeRoute].getFocusCamera(step) != gameManager.GetActiveCamera() 
-                    && routes[activeRoute].getFocusCamera(step+1) != gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera or would be
+                if (routes[activeRoute].getFocusCamera(step) != gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera
                 {
                     TakeStep();
                     cooldownReduction = 0;
@@ -193,12 +192,10 @@ public class BaseThiefAI : MonoBehaviour
         {
             transform.position = routes[activeRoute].GetWaypoint(step).transform.position;
             ToggleSprites();
-            //Play Audio
+            
             if (step == routes[activeRoute].GetWaypointTargetIndex())
             {
-                //Add a check to see if the target is a treasure or camera?
                 routes[activeRoute].GetTarget().SetActive(false);
-                //Play Audio of stealing here?
             }
         }
         else
@@ -247,7 +244,6 @@ public class BaseThiefAI : MonoBehaviour
     /// </summary>
     public virtual void Captured()
     {
-        //Play animation here? Or would it be better to have the animation trigger the capture.
         ReturnHome();
         Debug.Log(gameObject.name + " was Captured");
         targetInfo.TargetSaved(currentTarget);
