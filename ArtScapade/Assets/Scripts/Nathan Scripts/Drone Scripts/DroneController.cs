@@ -199,8 +199,11 @@ public class DroneController : MonoBehaviour
             else if (point == -1)
             {
                 Debug.Log("Fail to find drawable");
+                TransferPath();
                 clickTest = false;
                 setup.Clear();
+                lineRenderer.colorGradient = pathGradient;
+                DrawLine();
             }
         }
     }

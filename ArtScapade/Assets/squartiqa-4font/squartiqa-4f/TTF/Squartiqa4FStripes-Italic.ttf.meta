@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: afbffa9ef88e5984b84608eddaf1f2ca
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Squartiqa4FStripes-Italic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d8db78413c89d974b82ad8696b1b09bf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
