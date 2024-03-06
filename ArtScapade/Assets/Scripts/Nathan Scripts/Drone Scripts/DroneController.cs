@@ -55,7 +55,13 @@ public class DroneController : MonoBehaviour
         DroneMove();
         if (isSelected) //This will be important when multiple items being watched becomes important
             GetInput();
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Capture();
+        }
     }
+
 
     /// <summary>
     /// If there are any points on the ground, the drone will follow them in order til it reaches the last one.
