@@ -29,7 +29,7 @@ public class ButtonScript : MonoBehaviour
         {
             cam.depth = -1;         //Checks minimap camera depth and changes when clicked
         }
-        else
+        else if (cam.depth >= -1)
         {
             cam.depth = 0;
         }
