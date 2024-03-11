@@ -72,13 +72,13 @@ public class BaseThiefAI : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        /*
         if(!onCooldown && isActive) //Checks to see if this thief can make an action in the first place
         {
             if (Random.Range(0,100) < stepChance) //Check to see if it is able to get a random number below stepChance
             {
                 Debug.Log("Step Chance success check");
-                if (routes[activeRoute].getFocusCamera(step) != gameManager.GetActiveCamera() 
-                    && routes[activeRoute].getFocusCamera(step+1) != gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera or would be
+                if (routes[activeRoute].getFocusCamera(step) != gameManager.GetActiveCamera()) //Check to see if the thief is currently on camera
                 {
                     TakeStep();
                     cooldownReduction = 0;
@@ -94,6 +94,36 @@ public class BaseThiefAI : MonoBehaviour
             }
             StartCoroutine(Cooldown());
         }
+        */
+        TestIfCanMove();
+    }
+
+    protected void TestIfCanMove()
+    {
+        if (onCooldown || !isActive)
+        {
+            return;
+        }
+        StartCoroutine(Cooldown());
+        if (Random.Range(0, 100) >= stepChance)
+        {
+            return;
+        }
+        if (step + 1 < routes[activeRoute].GetWaypointSize())
+        {
+            if (routes[activeRoute].getFocusCamera(step + 1) == gameManager.GetActiveCamera())
+            {
+                ReduceCooldown();
+                return;
+            }
+        }
+        if (routes[activeRoute].getFocusCamera(step) == gameManager.GetActiveCamera())
+        {
+            ReduceCooldown();
+            return;
+        }
+        TakeStep();
+        cooldownReduction = 0;
     }
 
     /// <summary>
@@ -135,7 +165,7 @@ public class BaseThiefAI : MonoBehaviour
         {
             activeRoute = Random.Range(0, routes.Count);
             currentTarget = routes[activeRoute].GetTarget();
-            if (targetInfo.GetTarget().Contains(currentTarget))
+            if (targetInfo.GetTarget().Contains(currentTarget) && routes[activeRoute].getFocusCamera(0) != gameManager.GetActiveCamera())
             {
                 step = 0;
                 transform.position = routes[activeRoute].GetWaypoint(step).transform.position;
