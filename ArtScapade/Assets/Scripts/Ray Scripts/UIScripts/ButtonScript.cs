@@ -25,13 +25,13 @@ public class ButtonScript : MonoBehaviour
 
     public void MapActive()         //Used to bring minimap on and off screen
     {      
-        if (cam.depth >= 0)
+        if (cam.depth >= 1)
         {
             cam.depth = -1;         //Checks minimap camera depth and changes when clicked
         }
         else if (cam.depth >= -1)
         {
-            cam.depth = 0;
+            cam.depth = 1;
         }
     }
     

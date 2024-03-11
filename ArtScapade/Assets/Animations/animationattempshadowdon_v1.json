@@ -1,0 +1,108 @@
+{ "frames": {
+   "animationattempshadowdon_v1 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 1.ase": {
+    "frame": { "x": 1911, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 2.ase": {
+    "frame": { "x": 3822, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 3.ase": {
+    "frame": { "x": 5733, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 4.ase": {
+    "frame": { "x": 7644, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 5.ase": {
+    "frame": { "x": 9555, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 6.ase": {
+    "frame": { "x": 11466, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 7.ase": {
+    "frame": { "x": 13377, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 8.ase": {
+    "frame": { "x": 15288, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   },
+   "animationattempshadowdon_v1 9.ase": {
+    "frame": { "x": 17199, "y": 0, "w": 1911, "h": 2381 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 1911, "h": 2381 },
+    "sourceSize": { "w": 1911, "h": 2381 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.21-dev",
+  "image": "animationattempshadowdon_v1-sheet.png",
+  "format": "RGBA8888",
+  "size": { "w": 19110, "h": 2381 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "eyesoutfull", "opacity": 255, "blendMode": "normal" },
+   { "name": "eyespopup1", "opacity": 255, "blendMode": "normal" },
+   { "name": "waterpuddle", "opacity": 255, "blendMode": "normal" },
+   { "name": "watercut2", "opacity": 255, "blendMode": "normal" },
+   { "name": "watercut1", "opacity": 255, "blendMode": "normal" },
+   { "name": "waterfull2", "opacity": 255, "blendMode": "normal" },
+   { "name": "waterfull", "opacity": 255, "blendMode": "normal" },
+   { "name": "watermid", "opacity": 255, "blendMode": "normal" },
+   { "name": "waatertyop", "opacity": 255, "blendMode": "normal" },
+   { "name": "basereset", "opacity": 255, "blendMode": "normal" },
+   { "name": "emptylayer", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
