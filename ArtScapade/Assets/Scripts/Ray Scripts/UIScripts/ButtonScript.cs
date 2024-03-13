@@ -31,7 +31,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if (cam.depth >= -1)
         {
-            cam.depth = 0;
+            cam.depth = 1;
         }
     }
     
