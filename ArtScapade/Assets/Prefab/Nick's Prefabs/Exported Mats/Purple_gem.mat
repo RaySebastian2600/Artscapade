@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Purple_gem
   m_Shader: {fileID: 4800000, guid: 481153b840b6e408da95e6afbe176397, type: 3}
-  m_ShaderKeywords: _EMISSION _SEGMENTED_ON
+  m_ShaderKeywords: _CLIPPED_ON _EMISSION _SEGMENTED_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _AmbientCol: 0
     - _BumpScale: 1
-    - _Clipped: 0
+    - _Clipped: 1
     - _ColBright: 0
     - _ColIntense: 1
     - _Cutoff: 0.5
@@ -67,10 +67,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Lumin: 0
+    - _Lumin: 2
     - _MaxLight: 1
     - _Metallic: 0
-    - _MinLight: 0
+    - _MinLight: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Offset: 0
@@ -78,8 +78,8 @@ Material:
     - _Segmented: 1
     - _ShnIntense: 0
     - _ShnOverlap: 0
-    - _ShnRange: 0.15
-    - _ShnSmooth: 0
+    - _ShnRange: 1
+    - _ShnSmooth: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
