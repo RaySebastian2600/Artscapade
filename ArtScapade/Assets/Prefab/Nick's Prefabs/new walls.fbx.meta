@@ -3,7 +3,32 @@ guid: 48ac066e926320f439f52ad1d6328679
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DGray_wallbase
+    second: {fileID: 2100000, guid: 69843b49fc9a92d449dff596cf057b8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: testing_beige
+    second: {fileID: 2100000, guid: b259d7c5cdb6e23409f8612301d61f89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: testing_roughMetalGray
+    second: {fileID: 2100000, guid: 8d95990813d213e4989976a55ef4730d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: testing_roughMetalLightGray
+    second: {fileID: 2100000, guid: d11c19fd0e151354f90dfd4c51d34d0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: testing_smoothMetalLightGray
+    second: {fileID: 2100000, guid: b86430d5883cf954c93f9de4f5685a67, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
