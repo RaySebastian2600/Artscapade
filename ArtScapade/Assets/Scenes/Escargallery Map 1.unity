@@ -1489,6 +1489,24 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &140911193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3998425507742625705, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
+  m_PrefabInstance: {fileID: 5943079060708088738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &140911199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140911193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a833b2e02fee42d4d85a84d68d6fbaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSize: {x: 0.35, y: 0.35}
 --- !u!1 &155556167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2450,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4739486181440369483, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
@@ -7450,6 +7472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera_Gift Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 2138079165956759089, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2515316484551166530, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7472,6 +7498,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4739486181440369483, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
@@ -8826,7 +8856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: orthographic size
-      value: 28
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -8834,19 +8864,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382099, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_RootOrder
@@ -8854,7 +8884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382099, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.6
+      value: -13.7
       objectReference: {fileID: 0}
     - target: {fileID: 5800235811252382099, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8923,9 +8953,9 @@ MonoBehaviour:
   cameraSpriteOn: {fileID: 6595310383140453928, guid: 64e4391f78f198f4ca1ac6c18312701f, type: 3}
   droneSpriteOff: {fileID: 1233879758518454264, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
   droneSpriteOn: {fileID: -1331592484267494522, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
-  audioListener: {fileID: 1870887238}
   gameManager: {fileID: 735679784}
   cameraManager: {fileID: 0}
+  audioListener: {fileID: 1870887238}
 --- !u!20 &927545432 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5800235811252382098, guid: 33ba6fe2d43cc834a9b060444c483201, type: 3}
@@ -15239,6 +15269,10 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4739486181440369483, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -15764,6 +15798,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4739486181440369483, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
@@ -18543,6 +18581,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163772121133313459, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4739486181440369483, guid: ff54831d9f27a3740bc5a4f78dbbf663, type: 3}
@@ -23909,7 +23951,7 @@ MeshCollider:
   m_GameObject: {fileID: 832149485472271794}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -34487,6 +34529,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 663053020}
     m_Modifications:
+    - target: {fileID: 2252414477300490180, guid: 157ef01e34ddcd043aa4dfc8243c669e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252414477300490180, guid: 157ef01e34ddcd043aa4dfc8243c669e, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2849090692737335531, guid: 157ef01e34ddcd043aa4dfc8243c669e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -42107,6 +42157,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 927545432}
+    - target: {fileID: 3998425507742625710, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4122952005677195478, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.10884594
@@ -42194,6 +42248,18 @@ PrefabInstance:
     - target: {fileID: 8111613975185639784, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111613975185639784, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 140911199}
+    - target: {fileID: 8111613975185639784, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ScreenSwap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111613975185639784, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SwitchScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b0774e90d099dd479c2c546b7470714, type: 3}
@@ -52657,7 +52723,7 @@ MeshCollider:
   m_GameObject: {fileID: 8707273951674122182}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
