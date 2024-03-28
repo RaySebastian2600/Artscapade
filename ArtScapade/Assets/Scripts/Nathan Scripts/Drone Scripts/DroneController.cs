@@ -98,7 +98,7 @@ public class DroneController : MonoBehaviour
         if (!captureIsOnCooldown)
         {
             Debug.Log("Capturing");
-            captureVisual.transform.localScale = new Vector3(captureRadius, captureRadius, captureRadius);
+            captureVisual.transform.localScale = new Vector3(captureRadius*2, captureRadius*2, captureRadius*2);
             captureVisual.SetActive(true);
             Collider[] col = Physics.OverlapSphere(transform.position, captureRadius, thieves);
             //Instantiate(spherePrefab, this.transform.position, Quaternion.identity);

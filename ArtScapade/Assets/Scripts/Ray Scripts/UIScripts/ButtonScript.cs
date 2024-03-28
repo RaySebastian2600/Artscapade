@@ -21,6 +21,7 @@ public class ButtonScript : MonoBehaviour
         {
             MapActive();
         }
+        
     }
 
     public void MapActive()         //Used to bring minimap on and off screen
@@ -31,7 +32,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if (cam.depth >= -1)
         {
-            cam.depth = 0;
+            cam.depth = 1;
         }
     }
     

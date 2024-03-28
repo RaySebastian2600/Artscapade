@@ -10,6 +10,7 @@ TagManager:
   - Click Camera
   - Click Drone
   - Capture
+  - Power Up
   layers:
   - Default
   - TransparentFX

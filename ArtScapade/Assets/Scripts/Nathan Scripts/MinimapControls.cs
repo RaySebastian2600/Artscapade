@@ -23,18 +23,23 @@ public class MinimapControls : MonoBehaviour
     [Tooltip("The Sprite for the UI representing the drone being active")]
     [SerializeField] Sprite droneSpriteOn;
 
+
     [Tooltip("The GameManager object for this scene")]
     [SerializeField] GameManager gameManager;
     [Tooltip("The CameraManager object for this scene")]
     [SerializeField] CameraManager cameraManager;
+    [Tooltip("The AudioListener GameObject that will follow along with the active camera")]
+    [SerializeField] GameObject audioListener;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioListener = FindObjectOfType<AudioListener>().gameObject;
         gameManager = FindObjectOfType<GameManager>();
         cameraManager = FindObjectOfType<CameraManager>();
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
+        audioListener.transform.SetPositionAndRotation(gameManager.GetActiveCamera().transform.position, gameManager.GetActiveCamera().transform.rotation);
     }
 
     // Update is called once per frame
@@ -92,6 +97,7 @@ public class MinimapControls : MonoBehaviour
         gameManager.SetActiveCamera(nCamera.GetComponent<Camera>());
         gameManager.GetActiveCamera().enabled = true;
         gameManager.GetCurrentDevice().GetComponentInChildren<SpriteRenderer>().sprite = cameraSpriteOn;
+        audioListener.transform.SetPositionAndRotation(gameManager.GetActiveCamera().transform.position,gameManager.GetActiveCamera().transform.rotation);
         cameraManager.SetCamera(nCamera);
     }
 
