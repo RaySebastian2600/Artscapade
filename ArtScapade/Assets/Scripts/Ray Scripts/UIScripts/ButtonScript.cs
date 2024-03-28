@@ -21,6 +21,7 @@ public class ButtonScript : MonoBehaviour
         {
             MapActive();
         }
+        
     }
 
     public void MapActive()         //Used to bring minimap on and off screen

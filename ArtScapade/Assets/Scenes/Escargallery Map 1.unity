@@ -8923,6 +8923,7 @@ MonoBehaviour:
   cameraSpriteOn: {fileID: 6595310383140453928, guid: 64e4391f78f198f4ca1ac6c18312701f, type: 3}
   droneSpriteOff: {fileID: 1233879758518454264, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
   droneSpriteOn: {fileID: -1331592484267494522, guid: f8fc51b81767e9e4e8eede103935e90e, type: 3}
+  audioListener: {fileID: 1870887238}
   gameManager: {fileID: 735679784}
   cameraManager: {fileID: 0}
 --- !u!20 &927545432 stripped
@@ -17270,6 +17271,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1870887238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870887240}
+  - component: {fileID: 1870887239}
+  m_Layer: 0
+  m_Name: Audio Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1870887239
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870887238}
+  m_Enabled: 1
+--- !u!4 &1870887240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870887238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871712610
 GameObject:
   m_ObjectHideFlags: 0
